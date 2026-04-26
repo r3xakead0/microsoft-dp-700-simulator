@@ -12,6 +12,7 @@
   --border: #d2deea;
   --reveal-bg: #edf6ff;
   --reveal-border: #9cc5ea;
+  --topbar-sticky-offset: 82px;
 }
 
 * {
@@ -37,6 +38,13 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(243, 247, 251, 0.96);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0;
   margin-bottom: 18px;
 }
 
@@ -100,8 +108,13 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: var(--topbar-sticky-offset);
+  z-index: 30;
+  background: var(--panel);
   gap: 12px;
   margin-bottom: 16px;
+  padding-top: 8px;
   padding-bottom: 14px;
   border-bottom: 1px solid var(--border);
   color: var(--muted);
@@ -277,6 +290,10 @@ h1 {
 }
 
 @media (max-width: 820px) {
+  :root {
+    --topbar-sticky-offset: 98px;
+  }
+
   .card {
     padding: 18px;
   }
