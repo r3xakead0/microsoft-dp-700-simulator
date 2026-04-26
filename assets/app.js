@@ -19,7 +19,6 @@ const ui = {
   resumeBtn: document.getElementById("resumeBtn"),
   restartBtn: document.getElementById("restartBtn"),
   questionCounter: document.getElementById("questionCounter"),
-  questionNumberBadge: document.getElementById("questionNumberBadge"),
   progressSummary: document.getElementById("progressSummary"),
   questionText: document.getElementById("questionText"),
   optionsForm: document.getElementById("optionsForm"),
@@ -94,7 +93,7 @@ function setAnswerRevealed(index, revealed) {
 function updateProgressSummary() {
   const answered = getAnsweredCount();
   const total = state.questions.length;
-  ui.progressSummary.textContent = `Answered ${answered} / ${total}`;
+  ui.progressSummary.textContent = `Answered ${answered} of ${total}`;
 }
 
 function renderPager() {
@@ -147,7 +146,6 @@ function renderQuestion() {
   }
 
   ui.questionCounter.textContent = `Question ${state.currentIndex + 1} of ${state.questions.length}`;
-  ui.questionNumberBadge.textContent = `#${question.number || state.currentIndex + 1}`;
   ui.questionText.textContent = question.question;
 
   updateProgressSummary();
@@ -407,7 +405,7 @@ function resetSessionState() {
   state.revealedByIndex = {};
   state.status = "idle";
   ui.pageNumbers.innerHTML = "";
-  ui.progressSummary.textContent = "Answered 0 / 0";
+  ui.progressSummary.textContent = "Answered 0 of 0";
   ui.answerReveal.textContent = "";
   ui.answerReveal.classList.add("hidden");
 }

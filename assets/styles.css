@@ -96,26 +96,20 @@ h1 {
   font-weight: 600;
 }
 
-.question-meta {
+.exam-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
   color: var(--muted);
 }
 
 .progress-summary {
-  margin: 0 0 16px;
+  margin: 0;
   color: var(--muted);
-}
-
-#questionNumberBadge {
-  background: #e8f1fb;
-  color: var(--accent-strong);
-  border: 1px solid #bad3ed;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-weight: 600;
 }
 
 #questionText {
@@ -172,6 +166,10 @@ h1 {
 
 .actions.between {
   justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.answer-actions {
   margin-bottom: 16px;
 }
 
@@ -283,7 +281,7 @@ h1 {
     padding: 18px;
   }
 
-  .actions.between {
+  .exam-header {
     flex-direction: column;
     align-items: stretch;
   }

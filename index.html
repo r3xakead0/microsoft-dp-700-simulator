@@ -31,18 +31,17 @@
       </section>
 
       <section class="card hidden" id="examView">
-        <div class="question-meta">
+        <div class="exam-header">
           <span id="questionCounter">Question 0 of 0</span>
-          <span id="questionNumberBadge">#0</span>
+          <span id="progressSummary" class="progress-summary">Answered 0 of 0</span>
+          <button id="submitBtn" class="btn primary" type="button">Finish exam</button>
         </div>
-        <p id="progressSummary" class="progress-summary">Answered 0 / 0</p>
         <h2 id="questionText"></h2>
         <form id="optionsForm" class="options"></form>
         <p id="answerReveal" class="answer-reveal hidden"></p>
 
-        <div class="actions between">
+        <div class="actions answer-actions">
           <button id="viewAnswerBtn" class="btn ghost" type="button">View answer</button>
-          <button id="submitBtn" class="btn primary" type="button">Finish exam</button>
         </div>
 
         <nav class="pager" aria-label="Question navigation">
