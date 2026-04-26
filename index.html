@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Microsoft Exam Practice</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Microsoft Certification</p>
+          <h1 id="examTitle">Loading exam...</h1>
+        </div>
+        <div class="timer" id="timerBadge">--:--</div>
+      </header>
+
+      <section class="card" id="startView">
+        <h2>Welcome</h2>
+        <p id="startDescription">Preparing exam content...</p>
+        <ul class="instruction-list">
+          <li>Read each prompt and choose the best answer.</li>
+          <li>You can move between questions and update answers before submitting.</li>
+          <li>Your progress is saved locally so you can continue after a reload.</li>
+        </ul>
+        <div class="actions">
+          <button id="startBtn" class="btn primary" disabled>Start exam</button>
+          <button id="resumeBtn" class="btn" hidden>Resume</button>
+          <button id="restartBtn" class="btn ghost" hidden>Start over</button>
+        </div>
+      </section>
+
+      <section class="card hidden" id="examView">
+        <div class="question-meta">
+          <span id="questionCounter">Question 0 of 0</span>
+          <span id="questionNumberBadge">#0</span>
+        </div>
+        <h2 id="questionText"></h2>
+        <form id="optionsForm" class="options"></form>
+
+        <nav class="actions between">
+          <button id="prevBtn" class="btn" type="button">Previous</button>
+          <div class="inline-actions">
+            <button id="finishBtn" class="btn ghost" type="button">Finish</button>
+            <button id="nextBtn" class="btn primary" type="button">Next</button>
+          </div>
+        </nav>
+      </section>
+
+      <section class="card hidden" id="resultView">
+        <h2>Results</h2>
+        <p id="scoreSummary"></p>
+        <div id="resultList" class="result-list"></div>
+        <div class="actions">
+          <button id="newAttemptBtn" class="btn primary">New attempt</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>

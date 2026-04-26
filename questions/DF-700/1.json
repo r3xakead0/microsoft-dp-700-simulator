@@ -1,0 +1,31 @@
+{
+  "published_iso": "2026-02-28T14:53:00",
+  "number": 1,
+  "question": "A company uses Microsoft Fabric to centralize analytics for multiple departments. The BI team needs to reduce report refresh times and improve semantic model performance with the least maintenance effort. Which action should the team take first?",
+  "options": [
+    {
+      "key": "A",
+      "text": "Disable all incremental refresh policies and run full refresh nightly for every model."
+    },
+    {
+      "key": "B",
+      "text": "Use Import mode with incremental refresh and optimize model relationships based on star schema principles."
+    },
+    {
+      "key": "C",
+      "text": "Switch every report to DirectQuery regardless of source size and query pattern."
+    },
+    {
+      "key": "D",
+      "text": "Store all business logic only in report visuals instead of the semantic model."
+    }
+  ],
+  "answers": {
+    "platform": [
+      "B"
+    ],
+    "community": [
+      "B"
+    ]
+  }
+}
