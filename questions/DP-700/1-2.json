@@ -1,0 +1,33 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/152626-exam-dp-700-topic-1-question-2-discussion/",
+  "published_iso": "2024-12-06T18:10:00",
+  "number": 2,
+  "topic": 1,
+  "question": "You have a Fabric workspace.\nYou have semi-structured data.\nYou need to read the data by using T-SQL, KQL, and Apache Spark. The data will only be written by using Spark.\nWhat should you use to store the data?",
+  "options": [
+    {
+      "key": "A",
+      "text": "a lakehouse"
+    },
+    {
+      "key": "B",
+      "text": "an eventhouse"
+    },
+    {
+      "key": "C",
+      "text": "a datamart"
+    },
+    {
+      "key": "D",
+      "text": "a warehouse"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "A"
+    ],
+    "community": [
+      "A"
+    ]
+  }
+}

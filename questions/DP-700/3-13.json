@@ -1,0 +1,33 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/302546-exam-dp-700-topic-3-question-13-discussion/",
+  "published_iso": "2025-04-10T19:29:00",
+  "number": 13,
+  "topic": 3,
+  "question": "You have a Fabric workspace that contains a semantic model named Model1.\nYou need to monitor the refresh history of Model1 and visualize the refresh history in a chart.\nWhat should you use?",
+  "options": [
+    {
+      "key": "A",
+      "text": "the refresh history from the settings of Model1"
+    },
+    {
+      "key": "B",
+      "text": "a notebook"
+    },
+    {
+      "key": "C",
+      "text": "a Dataflow Gen2 dataflow"
+    },
+    {
+      "key": "D",
+      "text": "a data pipeline"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "B"
+    ],
+    "community": [
+      "B"
+    ]
+  }
+}

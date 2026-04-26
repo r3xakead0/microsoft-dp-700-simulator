@@ -1,0 +1,33 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/153727-exam-dp-700-topic-2-question-9-discussion/",
+  "published_iso": "2024-12-31T18:36:00",
+  "number": 9,
+  "topic": 2,
+  "question": "You have a Fabric workspace that contains an eventstream named Eventstream1. Eventstream1 processes data from a thermal sensor by using event stream processing, and then stores the data in a lakehouse.\nYou need to modify Eventstream1 to include the standard deviation of the temperature.\nWhich transform operator should you include in the Eventstream1 logic?",
+  "options": [
+    {
+      "key": "A",
+      "text": "Expand"
+    },
+    {
+      "key": "B",
+      "text": "Group by"
+    },
+    {
+      "key": "C",
+      "text": "Union"
+    },
+    {
+      "key": "D",
+      "text": "Aggregate"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "B"
+    ],
+    "community": [
+      "B"
+    ]
+  }
+}

@@ -79,6 +79,27 @@ h1 {
   color: var(--muted);
 }
 
+.field-row {
+  display: grid;
+  gap: 8px;
+  max-width: 260px;
+  margin-top: 14px;
+}
+
+.field-row label {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.select {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 9px 10px;
+  background: #ffffff;
+  color: var(--ink);
+  font-weight: 600;
+}
+
 .instruction-list li {
   margin-bottom: 8px;
 }
@@ -103,6 +124,7 @@ h1 {
 #questionText {
   margin-top: 0;
   line-height: 1.45;
+  white-space: pre-line;
 }
 
 .options {

@@ -1,0 +1,19 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/382628-exam-dp-700-topic-2-question-45-discussion/",
+  "published_iso": "2026-01-24T22:27:00",
+  "number": 45,
+  "topic": 2,
+  "question": "HOTSPOT\n-\nYou have Fabric lakehouse that contains a table named Table1. Table1 stores data in the following format.\n[Imagen]: https://img.examtopics.com/dp-700/image114.png\nYou have a notebook that contains the following code segment.\n[Imagen]: https://img.examtopics.com/dp-700/image115.png\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\nNOTE: Each correct selection is worth one point.\n[Imagen]: https://img.examtopics.com/dp-700/image116.png",
+  "options": [
+    {
+      "key": "A",
+      "text": "[Imagen]: https://img.examtopics.com/dp-700/image116.png"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "[IMAGEN]:",
+      "HTTPS://IMG.EXAMTOPICS.COM/DP-700/IMAGE117.PNG"
+    ]
+  }
+}

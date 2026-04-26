@@ -1,0 +1,33 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/155289-exam-dp-700-topic-1-question-26-discussion/",
+  "published_iso": "2025-01-23T13:38:00",
+  "number": 26,
+  "topic": 1,
+  "question": "You have a Fabric workspace named Workspace1 that contains a data pipeline named Pipeline1 and a lakehouse named Lakehouse1.\nYou have a deployment pipeline named deployPipeline1 that deploys Workspace1 to Workspace2.\nYou restructure Workspace1 by adding a folder named Folder1 and moving Pipeline1 to Folder1.\nYou use deployPipeline1 to deploy Workspace1 to Workspace2.\nWhat occurs to Workspace2?",
+  "options": [
+    {
+      "key": "A",
+      "text": "Folder1 is created, Pipeline1 moves to Folder1, and Lakehouse1 is deployed."
+    },
+    {
+      "key": "B",
+      "text": "Only Pipeline1 and Lakehouse1 are deployed."
+    },
+    {
+      "key": "C",
+      "text": "Folder1 is created, and Pipeline1 and Lakehouse1 move to Folder1."
+    },
+    {
+      "key": "D",
+      "text": "Only Folder1 is created and Pipeline1 moves to Folder1."
+    }
+  ],
+  "answers": {
+    "platform": [
+      "A"
+    ],
+    "community": [
+      "A"
+    ]
+  }
+}

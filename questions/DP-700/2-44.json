@@ -1,0 +1,33 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/382627-exam-dp-700-topic-2-question-44-discussion/",
+  "published_iso": "2026-01-24T22:22:00",
+  "number": 44,
+  "topic": 2,
+  "question": "You have a Fabric workspace that contains a lakehouse named Lakehouse1.\nIn an external data source, you have data files that are 500 GB each. A new file is added every day.\nYou need to ingest the data into Lakehouse1 without applying any transformations. The solution must meet the following requirements\n•\tTrigger the process when a new file is added.\n•\tProvide the highest throughput.\nWhich type of item should you use to ingest the data?",
+  "options": [
+    {
+      "key": "A",
+      "text": "Reflex"
+    },
+    {
+      "key": "B",
+      "text": "Eventstream"
+    },
+    {
+      "key": "C",
+      "text": "Notebook"
+    },
+    {
+      "key": "D",
+      "text": "KQL queryset"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "C"
+    ],
+    "community": [
+      "C"
+    ]
+  }
+}

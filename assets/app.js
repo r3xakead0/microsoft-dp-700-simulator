@@ -1,9 +1,16 @@
+const SUPPORTED_EXAMS = ["DP-700"];
+
 const params = new URLSearchParams(window.location.search);
-const examCode = (params.get("exam") || "DF-700").toUpperCase();
+const queryExam = (params.get("exam") || "").toUpperCase();
 const totalMinutes = Number.parseInt(params.get("minutes") || "90", 10);
 
+const examOptions = [...SUPPORTED_EXAMS];
+if (queryExam && !examOptions.includes(queryExam)) {
+  examOptions.push(queryExam);
+}
+
 const state = {
-  examCode,
+  examCode: queryExam || "DP-700",
   questions: [],
   currentIndex: 0,
   answersByIndex: {},
@@ -14,6 +21,7 @@ const state = {
 
 const ui = {
   examTitle: document.getElementById("examTitle"),
+  examSelect: document.getElementById("examSelect"),
   timerBadge: document.getElementById("timerBadge"),
   startView: document.getElementById("startView"),
   examView: document.getElementById("examView"),
@@ -34,7 +42,9 @@ const ui = {
   newAttemptBtn: document.getElementById("newAttemptBtn"),
 };
 
-const storageKey = `exam:${examCode}`;
+function getStorageKey(examCode = state.examCode) {
+  return `exam:${examCode}`;
+}
 
 function formatTime(totalSec) {
   const safeSec = Math.max(0, totalSec);
@@ -135,22 +145,22 @@ function persistProgress() {
     remainingSeconds: state.remainingSeconds,
     status: state.status,
   };
-  localStorage.setItem(storageKey, JSON.stringify(payload));
+  localStorage.setItem(getStorageKey(), JSON.stringify(payload));
 }
 
-function clearProgress() {
-  localStorage.removeItem(storageKey);
+function clearProgress(examCode = state.examCode) {
+  localStorage.removeItem(getStorageKey(examCode));
 }
 
-function loadSavedProgress() {
-  const raw = localStorage.getItem(storageKey);
+function loadSavedProgress(examCode = state.examCode) {
+  const raw = localStorage.getItem(getStorageKey(examCode));
   if (!raw) {
     return null;
   }
 
   try {
     const saved = JSON.parse(raw);
-    if (saved.examCode !== state.examCode) {
+    if (saved.examCode !== examCode) {
       return null;
     }
     return saved;
@@ -267,39 +277,105 @@ function finalizeExam(isTimeout = false) {
   setView("result");
 }
 
-async function loadQuestionsSequentially() {
+async function loadQuestionsSequentially(examCode) {
   const loaded = [];
 
-  for (let i = 1; ; i += 1) {
-    const path = `questions/${examCode}/${i}.json`;
-    const response = await fetch(path, { cache: "no-store" });
+  for (let topic = 1; ; topic += 1) {
+    let loadedInTopic = 0;
 
-    if (!response.ok) {
-      if (response.status === 404) {
-        break;
+    for (let question = 1; ; question += 1) {
+      const path = `questions/${examCode}/${topic}-${question}.json`;
+      const response = await fetch(path, { cache: "no-store" });
+
+      if (!response.ok) {
+        if (response.status === 404) {
+          if (question === 1) {
+            if (topic === 1 && loaded.length === 0) {
+              throw new Error(`No questions found in questions/${examCode}/`);
+            }
+            return loaded;
+          }
+          break;
+        }
+        throw new Error(`Error loading ${path}: ${response.status}`);
       }
-      throw new Error(`Error loading ${path}: ${response.status}`);
+
+      const data = await response.json();
+      if (!data || !data.question || !Array.isArray(data.options)) {
+        throw new Error(`Invalid format in ${path}`);
+      }
+      loaded.push(data);
+      loadedInTopic += 1;
     }
 
-    const data = await response.json();
-    if (!data || !data.question || !Array.isArray(data.options)) {
-      throw new Error(`Invalid format in ${path}`);
+    if (loadedInTopic === 0) {
+      break;
     }
-    loaded.push(data);
   }
 
   if (loaded.length === 0) {
     throw new Error(`No questions found in questions/${examCode}/`);
   }
 
-  loaded.sort((a, b) => Number(a.number) - Number(b.number));
   return loaded;
+}
+
+function resetSessionState() {
+  stopTimer();
+  state.questions = [];
+  state.currentIndex = 0;
+  state.answersByIndex = {};
+  state.remainingSeconds = Number.isFinite(totalMinutes) ? totalMinutes * 60 : 5400;
+  state.status = "idle";
+  ui.timerBadge.textContent = formatTime(state.remainingSeconds);
+}
+
+function applyExamToUrl(examCode) {
+  const next = new URL(window.location.href);
+  next.searchParams.set("exam", examCode);
+  window.history.replaceState({}, "", next);
+}
+
+async function loadExam(examCode) {
+  state.examCode = examCode;
+  resetSessionState();
+  setView("start");
+
+  ui.startBtn.hidden = false;
+  ui.startBtn.disabled = true;
+  ui.resumeBtn.hidden = true;
+  ui.restartBtn.hidden = true;
+  ui.startDescription.textContent = "Preparing exam content...";
+  ui.examTitle.textContent = `Exam simulator ${state.examCode}`;
+
+  try {
+    state.questions = await loadQuestionsSequentially(state.examCode);
+    ui.startDescription.textContent = `Exam ${state.examCode} is ready. ${state.questions.length} questions detected.`;
+    ui.startBtn.disabled = false;
+
+    const saved = loadSavedProgress(state.examCode);
+    if (saved && saved.status === "in_progress") {
+      ui.startDescription.textContent += " A saved attempt is in progress.";
+      ui.startBtn.hidden = true;
+      ui.resumeBtn.hidden = false;
+      ui.restartBtn.hidden = false;
+    }
+  } catch (error) {
+    ui.startDescription.textContent = `Could not load exam: ${error.message}`;
+    ui.startBtn.disabled = true;
+  }
+
+  applyExamToUrl(state.examCode);
 }
 
 function wireEvents() {
   ui.startBtn.addEventListener("click", () => startExam(false));
   ui.resumeBtn.addEventListener("click", () => startExam(true));
   ui.restartBtn.addEventListener("click", () => startExam(false));
+
+  ui.examSelect.addEventListener("change", async (event) => {
+    await loadExam(event.target.value);
+  });
 
   ui.prevBtn.addEventListener("click", () => {
     state.currentIndex = Math.max(0, state.currentIndex - 1);
@@ -327,32 +403,27 @@ function wireEvents() {
     ui.restartBtn.hidden = true;
     ui.startBtn.hidden = false;
     ui.startBtn.disabled = false;
-    ui.startDescription.textContent = `Exam ${examCode} is ready. ${state.questions.length} questions detected.`;
+    ui.startDescription.textContent = `Exam ${state.examCode} is ready. ${state.questions.length} questions detected.`;
     ui.timerBadge.textContent = formatTime(Number.isFinite(totalMinutes) ? totalMinutes * 60 : 5400);
   });
 }
 
+function populateExamSelect() {
+  ui.examSelect.innerHTML = "";
+  examOptions.forEach((examCode) => {
+    const option = document.createElement("option");
+    option.value = examCode;
+    option.textContent = examCode;
+    option.selected = examCode === state.examCode;
+    ui.examSelect.appendChild(option);
+  });
+}
+
 async function boot() {
-  ui.examTitle.textContent = `Exam simulator ${examCode}`;
   ui.timerBadge.textContent = formatTime(state.remainingSeconds);
+  populateExamSelect();
   wireEvents();
-
-  try {
-    state.questions = await loadQuestionsSequentially();
-    ui.startDescription.textContent = `Exam ${examCode} is ready. ${state.questions.length} questions detected.`;
-    ui.startBtn.disabled = false;
-
-    const saved = loadSavedProgress();
-    if (saved && saved.status === "in_progress") {
-      ui.startDescription.textContent += " A saved attempt is in progress.";
-      ui.startBtn.hidden = true;
-      ui.resumeBtn.hidden = false;
-      ui.restartBtn.hidden = false;
-    }
-  } catch (error) {
-    ui.startDescription.textContent = `Could not load exam: ${error.message}`;
-    ui.startBtn.disabled = true;
-  }
+  await loadExam(state.examCode);
 }
 
 boot();

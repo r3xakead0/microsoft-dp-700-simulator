@@ -1,0 +1,19 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/302494-exam-dp-700-topic-2-question-24-discussion/",
+  "published_iso": "2025-04-10T00:48:00",
+  "number": 24,
+  "topic": 2,
+  "question": "HOTSPOT\n-\nYou have a Fabric warehouse named DW1 that contains four staging tables named ProductCategory, ProductSubcategory, Product, and SalesOrder. ProductCategory, ProductSubcategory, and Product are used often in analytical queries.\nYou need to implement a star schema for DW1. The solution must minimize development effort.\nWhich design approach should you use? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.\n[Imagen]: https://img.examtopics.com/dp-700/image81.png",
+  "options": [
+    {
+      "key": "A",
+      "text": "[Imagen]: https://img.examtopics.com/dp-700/image81.png"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "[IMAGEN]:",
+      "HTTPS://IMG.EXAMTOPICS.COM/DP-700/IMAGE82.PNG"
+    ]
+  }
+}

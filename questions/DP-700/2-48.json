@@ -1,0 +1,33 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/382782-exam-dp-700-topic-2-question-48-discussion/",
+  "published_iso": "2026-01-30T06:37:00",
+  "number": 48,
+  "topic": 2,
+  "question": "You have a Fabric workspace named Workspace1 that contains three notebooks named notebook_01, notebook_02, and notebook_03.\nYou are building a new notebook in Workspace1 that will contain the following Directed Acyclic Graph (DAG) definition.\n[Imagen]: https://img.examtopics.com/dp-700/image122.png\nYou need to modify the DAG definition to meet the following requirements:\n•\tEnsure that notebook_01 and notebook_02 run in parallel.\n•\tEnsure that notebook_02 only runs after the execution of notebook_03 is complete.\nHow should you modify the DAG definition?",
+  "options": [
+    {
+      "key": "A",
+      "text": "Create a second DAG definition. Move notebook_03 and notebook_02 to the new DAG definition."
+    },
+    {
+      "key": "B",
+      "text": "Move the notebook_03 declaration to the top of the DAG definition. Add a concurrency to notebook_02 and notebook_01."
+    },
+    {
+      "key": "C",
+      "text": "Create two stages in the DAG definition. Add notebook_03 to the first stage. Add notebook_01 and notebook_02 to the second stage."
+    },
+    {
+      "key": "D",
+      "text": "Move the declaration of notebook_03 to the top of the DAG definition. Add a new stage that contains notebook_01 and notebook_02."
+    }
+  ],
+  "answers": {
+    "platform": [
+      "C"
+    ],
+    "community": [
+      "C"
+    ]
+  }
+}

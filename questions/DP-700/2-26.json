@@ -1,0 +1,19 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/302541-exam-dp-700-topic-2-question-26-discussion/",
+  "published_iso": "2025-04-10T17:03:00",
+  "number": 26,
+  "topic": 2,
+  "question": "HOTSPOT\n-\nYou plan to process the following three datasets by using Fabric:\nDataset1: This dataset will be added to Fabric and will have a unique primary key between the source and the destination. The unique primary key will be an integer and will start from 1 and have an increment of 1.\nDataset2: This dataset contains semi-structured data that uses bulk data transfer. The dataset must be handled in one process between the source and the destination. The data transformation process will include the use of custom visuals to understand and work with the dataset in development mode.\nDataset3: This dataset is in a lakehouse. The data will be bulk loaded. The data transformation process will include row-based windowing functions during the loading process.\nYou need to identify which type of item to use for the datasets. The solution must minimize development effort and use built-in functionality, when possible.\nWhat should you identify for each dataset? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.\n[Imagen]: https://img.examtopics.com/dp-700/image85.png",
+  "options": [
+    {
+      "key": "A",
+      "text": "[Imagen]: https://img.examtopics.com/dp-700/image85.png"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "[IMAGEN]:",
+      "HTTPS://IMG.EXAMTOPICS.COM/DP-700/IMAGE86.PNG"
+    ]
+  }
+}

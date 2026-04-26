@@ -1,0 +1,41 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/302455-exam-dp-700-topic-1-question-53-discussion/",
+  "published_iso": "2025-04-09T05:26:00",
+  "number": 53,
+  "topic": 1,
+  "question": "You have a Fabric workspace that contains a data pipeline named Pipeline1 as shown in the exhibit. (Click the Exhibit tab.)\n[Imagen]: https://img.examtopics.com/dp-700/image77.png\nWhat will occur the next time Pipeline1 runs?",
+  "options": [
+    {
+      "key": "A",
+      "text": "Copy_kdi will run first, and then Execute procedure1 will run."
+    },
+    {
+      "key": "B",
+      "text": "Execute procedure1 will run first, and then Copy_kdi will run."
+    },
+    {
+      "key": "C",
+      "text": "Execute procedure1 will run and Copy_kdi will be skipped."
+    },
+    {
+      "key": "D",
+      "text": "Copy_kdi will run and Execute procedure1 will be skipped."
+    },
+    {
+      "key": "E",
+      "text": "Both activities will run simultaneously."
+    },
+    {
+      "key": "F",
+      "text": "Both activities will be skipped."
+    }
+  ],
+  "answers": {
+    "platform": [
+      "D"
+    ],
+    "community": [
+      "D"
+    ]
+  }
+}

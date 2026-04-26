@@ -1,0 +1,19 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/389918-exam-dp-700-topic-2-question-46-discussion/",
+  "published_iso": "2026-03-18T18:09:00",
+  "number": 46,
+  "topic": 2,
+  "question": "HOTSPOT\n-\nYou have the development groups shown in the following table.\n[Imagen]: https://img.examtopics.com/dp-700/image118.png\nYou have the projects shown in the following table.\n[Imagen]: https://img.examtopics.com/dp-700/image119.png\nYou need to recommend which Fabric item to use based on each development group’s skillset. The solution must meet the project requirements and minimize development effort.\nWhat should you recommend for each group? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.\n[Imagen]: https://img.examtopics.com/dp-700/image120.png",
+  "options": [
+    {
+      "key": "A",
+      "text": "[Imagen]: https://img.examtopics.com/dp-700/image120.png"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "[IMAGEN]:",
+      "HTTPS://IMG.EXAMTOPICS.COM/DP-700/IMAGE121.PNG"
+    ]
+  }
+}

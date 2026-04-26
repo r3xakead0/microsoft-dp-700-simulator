@@ -1,0 +1,33 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/302447-exam-dp-700-topic-3-question-14-discussion/",
+  "published_iso": "2025-04-08T14:37:00",
+  "number": 14,
+  "topic": 3,
+  "question": "You have a Fabric workspace that contains a write-intensive warehouse named DW1. DW1 stores staging tables that are used to load a dimensional model. The tables are often read once, dropped, and then recreated to process new data.\nYou need to minimize the load time of DW1.\nWhat should you do?",
+  "options": [
+    {
+      "key": "A",
+      "text": "Enable V-Order."
+    },
+    {
+      "key": "B",
+      "text": "Create statistics."
+    },
+    {
+      "key": "C",
+      "text": "Drop statistics."
+    },
+    {
+      "key": "D",
+      "text": "Disable V-Order."
+    }
+  ],
+  "answers": {
+    "platform": [
+      "D"
+    ],
+    "community": [
+      "D"
+    ]
+  }
+}

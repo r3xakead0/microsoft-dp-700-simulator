@@ -1,0 +1,19 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/302715-exam-dp-700-topic-2-question-28-discussion/",
+  "published_iso": "2025-04-18T13:49:00",
+  "number": 28,
+  "topic": 2,
+  "question": "DRAG DROP\n-\nYou are building a data loading pattern by using a Fabric data pipeline. The source is an Azure SQL database that contains 25 tables. The destination is a lakehouse.\nIn a warehouse, you create a control table named Control.Object as shown in the exhibit. (Click the Exhibit tab.)\n[Imagen]: https://img.examtopics.com/dp-700/image89.png\nYou need to build a data pipeline that will support the dynamic ingestion of the tables listed in the control table by using a single execution.\nWhich three actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.\n[Imagen]: https://img.examtopics.com/dp-700/image90.png",
+  "options": [
+    {
+      "key": "A",
+      "text": "[Imagen]: https://img.examtopics.com/dp-700/image90.png"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "[IMAGEN]:",
+      "HTTPS://IMG.EXAMTOPICS.COM/DP-700/IMAGE91.PNG"
+    ]
+  }
+}

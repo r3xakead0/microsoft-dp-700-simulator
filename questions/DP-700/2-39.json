@@ -1,0 +1,19 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/302502-exam-dp-700-topic-2-question-39-discussion/",
+  "published_iso": "2025-04-10T03:49:00",
+  "number": 39,
+  "topic": 2,
+  "question": "HOTSPOT\n-\nYou need to recommend a Fabric streaming solution that will use the sources shown in the following table.\n[Imagen]: https://img.examtopics.com/dp-700/image102.png\nThe solution must minimize development effort.\nWhat should you include in the recommendation for each source? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.\n[Imagen]: https://img.examtopics.com/dp-700/image103.png",
+  "options": [
+    {
+      "key": "A",
+      "text": "[Imagen]: https://img.examtopics.com/dp-700/image103.png"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "[IMAGEN]:",
+      "HTTPS://IMG.EXAMTOPICS.COM/DP-700/IMAGE104.PNG"
+    ]
+  }
+}

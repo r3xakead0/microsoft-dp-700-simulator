@@ -1,0 +1,19 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/155696-exam-dp-700-topic-2-question-16-discussion/",
+  "published_iso": "2025-01-30T07:48:00",
+  "number": 16,
+  "topic": 2,
+  "question": "HOTSPOT -\nYou have a Fabric workspace.\nYou are debugging a statement and discover the following issues:\nSometimes, the statement fails to return all the expected rows.\nThe PurchaseDate output column is NOT in the expected format of mmm dd, yy.\nYou need to resolve the issues. The solution must ensure that the data types of the results are retained. The results can contain blank cells.\nHow should you complete the statement? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.\n[Imagen]: https://img.examtopics.com/dp-700/image49.png",
+  "options": [
+    {
+      "key": "A",
+      "text": "[Imagen]: https://img.examtopics.com/dp-700/image49.png"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "[IMAGEN]:",
+      "HTTPS://IMG.EXAMTOPICS.COM/DP-700/IMAGE50.PNG"
+    ]
+  }
+}

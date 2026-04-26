@@ -1,0 +1,33 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/302463-exam-dp-700-topic-2-question-29-discussion/",
+  "published_iso": "2025-04-09T13:14:00",
+  "number": 29,
+  "topic": 2,
+  "question": "You are implementing a medallion architecture in a Fabric lakehouse.\nYou plan to create a dimension table that will contain the following columns:\n•\tID\n•\tCustomerCode\n•\tCustomerName\n•\tCustomerAddress\n•\tCustomerLocation\n•\tValidFrom\n•\tValidTo\nYou need to ensure that the table supports the analysis of historical sales data by customer location at the time of each sale.\nWhich type of slowly changing dimension (SCD) should you use?",
+  "options": [
+    {
+      "key": "A",
+      "text": "Type 2"
+    },
+    {
+      "key": "B",
+      "text": "Type 0"
+    },
+    {
+      "key": "C",
+      "text": "Type 1"
+    },
+    {
+      "key": "D",
+      "text": "Type 3"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "A"
+    ],
+    "community": [
+      "A"
+    ]
+  }
+}
