@@ -331,9 +331,21 @@ async function loadQuestionFile(path) {
   if (response.status === 404) {
     return null;
   }
+
+  const contentType = (response.headers.get("content-type") || "").toLowerCase();
+
   if (!response.ok) {
     throw new Error(`Error loading ${path}: ${response.status}`);
   }
+
+  if (contentType.includes("text/html")) {
+    return null;
+  }
+
+  if (!contentType.includes("application/json") && !contentType.includes("text/json")) {
+    throw new Error(`Unexpected content type for ${path}: ${contentType || "unknown"}`);
+  }
+
   return response.json();
 }
 
