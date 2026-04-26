@@ -1,0 +1,40 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/302442-exam-dp-700-topic-1-question-49-discussion/",
+  "published_iso": "2025-04-08T14:07:00",
+  "number": 49,
+  "topic": 1,
+  "question": "You have a Fabric workspace that contains a lakehouse and a semantic model named Model1.\nYou use a notebook named Notebook1 to ingest and transform data from an external data source.\nYou need to execute Notebook1 as part of a data pipeline named Pipeline1. The process must meet the following requirements:\n•\tRun daily at 07:00 AM UTC.\n•\tAttempt to retry Notebook1 twice if the notebook fails.\n•\tAfter Notebook1 executes successfully, refresh Model1.\nWhich three actions should you perform? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.\n\n",
+  "options": [
+    {
+      "key": "A",
+      "text": "Place the Semantic model refresh activity after the Notebook activity and link the activities by using the On success condition."
+    },
+    {
+      "key": "B",
+      "text": "From the Schedule settings of Pipeline1, set the time zone to UTC."
+    },
+    {
+      "key": "C",
+      "text": "Set the Retry setting of the Notebook activity to 2."
+    },
+    {
+      "key": "D",
+      "text": "From the Schedule settings of Notebook1, set the time zone to UTC."
+    },
+    {
+      "key": "E",
+      "text": "Set the Retry setting of the Semantic model refresh activity to 2."
+    },
+    {
+      "key": "F",
+      "text": "Place the Semantic model refresh activity after the Notebook activity and link the activities by using an On completion condition."
+    }
+  ],
+  "answers": {
+    "community": [
+      "A",
+      "B",
+      "C"
+    ]
+  }
+}

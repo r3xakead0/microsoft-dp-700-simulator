@@ -1,0 +1,45 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/153657-exam-dp-700-topic-1-question-29-discussion/",
+  "published_iso": "2024-12-30T17:57:00",
+  "number": 29,
+  "topic": 1,
+  "question": "You have five Fabric workspaces.\nYou are monitoring the execution of items by using Monitoring hub.\nYou need to identify in which workspace a specific item runs.\nWhich column should you view in Monitoring hub?\n\n",
+  "options": [
+    {
+      "key": "A",
+      "text": "Start time"
+    },
+    {
+      "key": "B",
+      "text": "Capacity"
+    },
+    {
+      "key": "C",
+      "text": "Activity name"
+    },
+    {
+      "key": "D",
+      "text": "Submitter"
+    },
+    {
+      "key": "E",
+      "text": "Item type"
+    },
+    {
+      "key": "F",
+      "text": "Job type"
+    },
+    {
+      "key": "G",
+      "text": "Location"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "G"
+    ],
+    "community": [
+      "G"
+    ]
+  }
+}

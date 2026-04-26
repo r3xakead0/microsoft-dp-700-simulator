@@ -1,0 +1,37 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/152690-exam-dp-700-topic-1-question-14-discussion/",
+  "published_iso": "2024-12-08T16:19:00",
+  "number": 14,
+  "topic": 1,
+  "question": "You have a Fabric workspace that contains a Real-Time Intelligence solution and an eventhouse.\nUsers report that from OneLake file explorer, they cannot see the data from the eventhouse.\nYou enable OneLake availability for the eventhouse.\nWhat will be copied to OneLake?\n\n",
+  "options": [
+    {
+      "key": "A",
+      "text": "only data added to new databases that are added to the eventhouse"
+    },
+    {
+      "key": "B",
+      "text": "only the existing data in the eventhouse"
+    },
+    {
+      "key": "C",
+      "text": "no data"
+    },
+    {
+      "key": "D",
+      "text": "both new data and existing data in the eventhouse"
+    },
+    {
+      "key": "E",
+      "text": "only new data added to the eventhouse"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "D"
+    ],
+    "community": [
+      "D"
+    ]
+  }
+}

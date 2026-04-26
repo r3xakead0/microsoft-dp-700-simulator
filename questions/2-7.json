@@ -1,0 +1,18 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/154776-exam-dp-700-topic-2-question-7-discussion/",
+  "published_iso": "2025-01-17T09:23:00",
+  "number": 7,
+  "topic": 2,
+  "question": "HOTSPOT -\nYou have a Fabric workspace that contains a warehouse named Warehouse1. Warehouse1 contains the following tables and columns.\n[Imagen]: https://img.examtopics.com/dp-700/image34.png\nYou need to denormalize the tables and include the ContractType and StartDate columns in the Employee table. The solution must meet the following requirements:\nEnsure that the StartDate column is of the date data type.\nEnsure that all the rows from the Employee table are preserved and include any matching rows from the Contract table.\nEnsure that the result set displays the total number of employees per contract type for all the contract types that have more than two employees.\nHow should you complete the statement? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.\n[Imagen]: https://img.examtopics.com/dp-700/image35.png\n\n",
+  "options": [
+    {
+      "key": "A",
+      "text": "[Imagen]: https://img.examtopics.com/dp-700/image35.png"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "[Imagen]: https://img.examtopics.com/dp-700/image36.png"
+    ]
+  }
+}

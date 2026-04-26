@@ -1,0 +1,41 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/152675-exam-dp-700-topic-1-question-16-discussion/",
+  "published_iso": "2024-12-08T12:41:00",
+  "number": 16,
+  "topic": 1,
+  "question": "You have a Google Cloud Storage (GCS) container named storage1 that contains the files shown in the following table.\n[Imagen]: https://img.examtopics.com/dp-700/image7.png\nYou have a Fabric workspace named Workspace1 that has the cache for shortcuts enabled. Workspace1 contains a lakehouse named Lakehouse1. Lakehouse1 has the shortcuts shown in the following table.\n[Imagen]: https://img.examtopics.com/dp-700/image8.png\nYou need to read data from all the shortcuts.\nWhich shortcuts will retrieve data from the cache?\n\n",
+  "options": [
+    {
+      "key": "A",
+      "text": "Stores only"
+    },
+    {
+      "key": "B",
+      "text": "Products only"
+    },
+    {
+      "key": "C",
+      "text": "Stores and Products only"
+    },
+    {
+      "key": "D",
+      "text": "Products, Stores, and Trips"
+    },
+    {
+      "key": "E",
+      "text": "Trips only"
+    },
+    {
+      "key": "F",
+      "text": "Products and Trips only"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "C"
+    ],
+    "community": [
+      "C"
+    ]
+  }
+}

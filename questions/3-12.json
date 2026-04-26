@@ -1,0 +1,33 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/302503-exam-dp-700-topic-3-question-12-discussion/",
+  "published_iso": "2025-04-10T04:49:00",
+  "number": 12,
+  "topic": 3,
+  "question": "You have a Fabric workspace that contains a warehouse named Warehouse1.\nWhile monitoring Warehouse1, you discover that query performance has degraded during the last 60 minutes.\nYou need to isolate all the queries that were run during the last 60 minutes. The results must include the username of the users that submitted the queries and the query statements.\nWhat should you use?\n\n",
+  "options": [
+    {
+      "key": "A",
+      "text": "the Microsoft Fabric Capacity Metrics app"
+    },
+    {
+      "key": "B",
+      "text": "views from the queryinsights schema"
+    },
+    {
+      "key": "C",
+      "text": "Query activity"
+    },
+    {
+      "key": "D",
+      "text": "the sys.dm_exec_requests dynamic management view"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "B"
+    ],
+    "community": [
+      "B"
+    ]
+  }
+}

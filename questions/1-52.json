@@ -1,0 +1,39 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/302445-exam-dp-700-topic-1-question-52-discussion/",
+  "published_iso": "2025-04-08T14:26:00",
+  "number": 52,
+  "topic": 1,
+  "question": "You are building a Fabric notebook named MasterNotebook1 in a workspace. MasterNotebook1 contains the following code.\n[Imagen]: https://img.examtopics.com/dp-700/image76.png\nYou need to ensure that the notebooks are executed in the following sequence:\n1. Notebook_03\n2. Notebook_01\n3. Notebook_02\nWhich two actions should you perform? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.\n\n",
+  "options": [
+    {
+      "key": "A",
+      "text": "Move the declaration of Notebook_02 to the bottom of the Directed Acyclic Graph (DAG) definition."
+    },
+    {
+      "key": "B",
+      "text": "Add dependencies to the execution of Notebook_03."
+    },
+    {
+      "key": "C",
+      "text": "Split the Directed Acyclic Graph (DAG) definition into three separate definitions."
+    },
+    {
+      "key": "D",
+      "text": "Add dependencies to the execution of Notebook_02."
+    },
+    {
+      "key": "E",
+      "text": "Change the concurrency to 3."
+    },
+    {
+      "key": "F",
+      "text": "Move the declaration of Notebook_03 to the top of the Directed Acyclic Graph (DAG) definition."
+    }
+  ],
+  "answers": {
+    "community": [
+      "D",
+      "F"
+    ]
+  }
+}

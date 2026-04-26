@@ -1,0 +1,33 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/302496-exam-dp-700-topic-2-question-34-discussion/",
+  "published_iso": "2025-04-10T02:21:00",
+  "number": 34,
+  "topic": 2,
+  "question": "You have a Fabric warehouse named DW1 that contains a Type 2 slowly changing dimension (SCD) dimension table named DimCustomer. DimCustomer contains 100 columns and 20 million rows. The columns are of various data types, including int, varchar, date, and varbinary.\nYou need to identify incoming changes to the table and update the records when there is a change. The solution must minimize resource consumption.\nWhat should you use to identify changes to attributes?\n\n",
+  "options": [
+    {
+      "key": "A",
+      "text": "hash function to compare the attributes in the source table."
+    },
+    {
+      "key": "B",
+      "text": "a direct attributes comparison across the attributes in the DimCustomer table."
+    },
+    {
+      "key": "C",
+      "text": "a direct attributes comparison for the attributes in the source table."
+    },
+    {
+      "key": "D",
+      "text": "a hash function to compare the attributes in the DimCustomer table."
+    }
+  ],
+  "answers": {
+    "platform": [
+      "A"
+    ],
+    "community": [
+      "A"
+    ]
+  }
+}

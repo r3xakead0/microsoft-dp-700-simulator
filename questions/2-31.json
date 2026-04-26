@@ -1,0 +1,18 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/302466-exam-dp-700-topic-2-question-31-discussion/",
+  "published_iso": "2025-04-09T13:23:00",
+  "number": 31,
+  "topic": 2,
+  "question": "HOTSPOT\n-\nYou have a table in a Fabric lakehouse that contains the following data.\n[Imagen]: https://img.examtopics.com/dp-700/image92.png\nYou have a notebook that contains the following code segment.\n[Imagen]: https://img.examtopics.com/dp-700/image93.png\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\nNOTE: Each correct selection is worth one point.\n[Imagen]: https://img.examtopics.com/dp-700/image94.png\n\n",
+  "options": [
+    {
+      "key": "A",
+      "text": "[Imagen]: https://img.examtopics.com/dp-700/image94.png"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "[Imagen]: https://img.examtopics.com/dp-700/image95.png"
+    ]
+  }
+}

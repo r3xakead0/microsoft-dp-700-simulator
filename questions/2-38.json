@@ -1,0 +1,18 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/302764-exam-dp-700-topic-2-question-38-discussion/",
+  "published_iso": "2025-04-20T04:45:00",
+  "number": 38,
+  "topic": 2,
+  "question": "DRAG DROP\n-\nYou have a KQL database that contains a table named Readings.\nYou need to build a KQL query to compare the MeterReading value of each row to the previous row base on the Timestamp value.\nA sample of the expected output is shown in the following table.\n[Imagen]: https://img.examtopics.com/dp-700/image99.png\nHow should you complete the query? To answer, drag the appropriate values the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\nNOTE: Each correct selection is worth one point.\n[Imagen]: https://img.examtopics.com/dp-700/image100.png\n\n",
+  "options": [
+    {
+      "key": "A",
+      "text": "[Imagen]: https://img.examtopics.com/dp-700/image100.png"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "[Imagen]: https://img.examtopics.com/dp-700/image101.png"
+    ]
+  }
+}

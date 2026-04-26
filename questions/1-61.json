@@ -1,0 +1,18 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/382599-exam-dp-700-topic-1-question-61-discussion/",
+  "published_iso": "2026-01-22T03:42:00",
+  "number": 61,
+  "topic": 1,
+  "question": "DRAG DROP\n-\n[Imagen]: https://img.examtopics.com/dp-700/image111.png\nIn the Development workspace, you build a new feature named Feature1.\nYou need to deploy Feature1 to the Test workspace. The solution must ensure that only a pipeline is deployed.\nWhich four actions should you perform in sequence? To answer, move the appropriate actions from the list of actions to the answer area and arrange them in the correct order.\n[Imagen]: https://img.examtopics.com/dp-700/image112.png\n\n",
+  "options": [
+    {
+      "key": "A",
+      "text": "[Imagen]: https://img.examtopics.com/dp-700/image112.png"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "[Imagen]: https://img.examtopics.com/dp-700/image113.png"
+    ]
+  }
+}

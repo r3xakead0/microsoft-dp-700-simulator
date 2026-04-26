@@ -1,0 +1,18 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/153607-exam-dp-700-topic-1-question-19-discussion/",
+  "published_iso": "2024-12-29T15:56:00",
+  "number": 19,
+  "topic": 1,
+  "question": "HOTSPOT -\nYou have a Fabric workspace named Workspace1 that contains the items shown in the following table.\n[Imagen]: https://img.examtopics.com/dp-700/image10.png\nFor Model1, the Keep your Direct Lake data up to date option is disabled.\nYou need to configure the execution of the items to meet the following requirements:\nNotebook1 must execute every weekday at 8:00 AM.\nNotebook2 must execute when a file is saved to an Azure Blob Storage container.\nModel1 must refresh when Notebook1 has executed successfully.\nHow should you orchestrate each item? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.\n[Imagen]: https://img.examtopics.com/dp-700/image11.png\n\n",
+  "options": [
+    {
+      "key": "A",
+      "text": "[Imagen]: https://img.examtopics.com/dp-700/image11.png"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "[Imagen]: https://img.examtopics.com/dp-700/image12.png"
+    ]
+  }
+}

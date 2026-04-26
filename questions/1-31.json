@@ -1,0 +1,18 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/154903-exam-dp-700-topic-1-question-31-discussion/",
+  "published_iso": "2025-01-19T16:20:00",
+  "number": 31,
+  "topic": 1,
+  "question": "DRAG DROP -\nYou have a Fabric workspace that contains a warehouse named Warehouse1.\nIn Warehouse1, you create a table named DimCustomer by running the following statement.\n[Imagen]: https://img.examtopics.com/dp-700/image22.png\nYou need to set the Customerkey column as a primary key of the DimCustomer table.\nWhich three code segments should you run in sequence? To answer, move the appropriate code segments from the list of code segments to the answer area and arrange them in the correct order.\n[Imagen]: https://img.examtopics.com/dp-700/image23.png\n\n",
+  "options": [
+    {
+      "key": "A",
+      "text": "[Imagen]: https://img.examtopics.com/dp-700/image23.png"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "[Imagen]: https://img.examtopics.com/dp-700/image24.png"
+    ]
+  }
+}

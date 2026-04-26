@@ -1,0 +1,33 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/153737-exam-dp-700-topic-2-question-10-discussion/",
+  "published_iso": "2024-12-31T20:04:00",
+  "number": 10,
+  "topic": 2,
+  "question": "You have an Azure event hub. Each event contains the following fields:\nBikepointID -\nStreet -\nNeighbourhood -\nLatitude -\nLongitude -\nNo_Bikes -\nNo_Empty_Docks -\nYou need to ingest the events. The solution must only retain events that have a Neighbourhood value of Chelsea, and then store the retained events in a Fabric lakehouse.\nWhat should you use?\n\n",
+  "options": [
+    {
+      "key": "A",
+      "text": "KQL queryset"
+    },
+    {
+      "key": "B",
+      "text": "an eventstream"
+    },
+    {
+      "key": "C",
+      "text": "a streaming dataset"
+    },
+    {
+      "key": "D",
+      "text": "Apache Spark Structured Streaming"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "B"
+    ],
+    "community": [
+      "B"
+    ]
+  }
+}

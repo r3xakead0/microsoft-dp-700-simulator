@@ -1,0 +1,33 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/152873-exam-dp-700-topic-1-question-22-discussion/",
+  "published_iso": "2024-12-11T22:21:00",
+  "number": 22,
+  "topic": 1,
+  "question": "You have a Fabric capacity that contains a workspace named Workspace1. Workspace1 contains a lakehouse named Lakehouse1, a data pipeline, a notebook, and several Microsoft Power BI reports.\nA user named User1 wants to use SQL to analyze the data in Lakehouse1.\nYou need to configure access for User1. The solution must meet the following requirements:\nProvide User1 with read access to the table data in Lakehouse1.\nPrevent User1 from using Apache Spark to query the underlying files in Lakehouse1.\nPrevent User1 from accessing other items in Workspace1.\nWhat should you do?\n\n",
+  "options": [
+    {
+      "key": "A",
+      "text": "Share Lakehouse1 with User1 directly and select Read all SQL endpoint data."
+    },
+    {
+      "key": "B",
+      "text": "Assign User1 the Viewer role for Workspace1. Share Lakehouse1 with User1 and select Read all SQL endpoint data."
+    },
+    {
+      "key": "C",
+      "text": "Share Lakehouse1 with User1 directly and select Build reports on the default semantic model."
+    },
+    {
+      "key": "D",
+      "text": "Assign User1 the Member role for Workspace1. Share Lakehouse1 with User1 and select Read all SQL endpoint data."
+    }
+  ],
+  "answers": {
+    "platform": [
+      "A"
+    ],
+    "community": [
+      "A"
+    ]
+  }
+}

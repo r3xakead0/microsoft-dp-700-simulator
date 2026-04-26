@@ -1,0 +1,37 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/153719-exam-dp-700-topic-1-question-30-discussion/",
+  "published_iso": "2024-12-31T17:53:00",
+  "number": 30,
+  "topic": 1,
+  "question": "You have a Fabric workspace that contains a warehouse named DW1. DW1 is loaded by using a notebook named Notebook1.\nYou need to identify which version of Delta was used when Notebook1 was executed.\nWhat should you use?\n\n",
+  "options": [
+    {
+      "key": "A",
+      "text": "Real-Time hub"
+    },
+    {
+      "key": "B",
+      "text": "OneLake data hub"
+    },
+    {
+      "key": "C",
+      "text": "the Admin monitoring workspace"
+    },
+    {
+      "key": "D",
+      "text": "Fabric Monitor"
+    },
+    {
+      "key": "E",
+      "text": "the Microsoft Fabric Capacity Metrics app"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "D"
+    ],
+    "community": [
+      "D"
+    ]
+  }
+}

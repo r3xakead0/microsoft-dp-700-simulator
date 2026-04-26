@@ -1,0 +1,33 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/302444-exam-dp-700-topic-1-question-51-discussion/",
+  "published_iso": "2025-04-08T14:16:00",
+  "number": 51,
+  "topic": 1,
+  "question": "You have a Fabric workspace named Workspace1 that contains a lakehouse named Lakehouse1. Workspace1 contains the following items:\n•\tA Dataflow Gen2 dataflow that copies data from an on-premises Microsoft SQL Server database to Lakehouse1\n•\tA notebook that transforms files and loads the data to Lakehouse1\n•\tA data pipeline that loads a CSV file to Lakehouse1\nYou need to develop an orchestration solution in Fabric that will load each item one after the other. The solution must be scheduled to run every 15 minutes.\nWhich type of item should you use?\n\n",
+  "options": [
+    {
+      "key": "A",
+      "text": "notebook"
+    },
+    {
+      "key": "B",
+      "text": "warehouse"
+    },
+    {
+      "key": "C",
+      "text": "Dataflow Gen2 dataflow"
+    },
+    {
+      "key": "D",
+      "text": "ata pipeline"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "D"
+    ],
+    "community": [
+      "D"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/302441-exam-dp-700-topic-1-question-48-discussion/",
+  "published_iso": "2025-04-08T14:05:00",
+  "number": 48,
+  "topic": 1,
+  "question": "You have a Fabric workspace named Workspace1.\nYou plan to configure Git integration for Workspace1 by using an Azure DevOps Git repository.\nAn Azure DevOps admin creates the required artifacts to support the integration of Workspace1.\nWhich details do you require to perform the integration?\n\n",
+  "options": [
+    {
+      "key": "A",
+      "text": "the organization, project, Git repository, and branch"
+    },
+    {
+      "key": "B",
+      "text": "the personal access token (PAT) for Git authentication and the Git repository URL"
+    },
+    {
+      "key": "C",
+      "text": "the project, Git repository, branch, and Git folder"
+    },
+    {
+      "key": "D",
+      "text": "the Git repository URL and the Git folder"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "A"
+    ],
+    "community": [
+      "A"
+    ]
+  }
+}

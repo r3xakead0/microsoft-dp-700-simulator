@@ -13,16 +13,11 @@
           <p class="eyebrow">Microsoft Certification</p>
           <h1 id="examTitle">Loading exam...</h1>
         </div>
-        <div class="timer" id="timerBadge">--:--</div>
       </header>
 
       <section class="card" id="startView">
         <h2>Welcome</h2>
         <p id="startDescription">Preparing exam content...</p>
-        <div class="field-row">
-          <label for="examSelect">Exam code</label>
-          <select id="examSelect" class="select"></select>
-        </div>
         <ul class="instruction-list">
           <li>Read each prompt and choose the best answer.</li>
           <li>You can move between questions and update answers before submitting.</li>
@@ -35,42 +30,28 @@
         </div>
       </section>
 
-      <section class="exam-layout hidden" id="examView">
-        <aside class="card navigator-panel" id="navigatorPanel">
-          <div class="navigator-header">
-            <h2>Navigator</h2>
-            <div class="navigator-buttons">
-              <button id="toggleNavigatorBtn" class="btn desktop-only" type="button">Hide</button>
-              <button id="closeNavigatorBtn" class="btn mobile-only" type="button">Close</button>
-            </div>
-          </div>
-          <p id="progressSummary" class="progress-summary">Answered 0 / 0</p>
+      <section class="card hidden" id="examView">
+        <div class="question-meta">
+          <span id="questionCounter">Question 0 of 0</span>
+          <span id="questionNumberBadge">#0</span>
+        </div>
+        <p id="progressSummary" class="progress-summary">Answered 0 / 0</p>
+        <h2 id="questionText"></h2>
+        <form id="optionsForm" class="options"></form>
+        <p id="answerReveal" class="answer-reveal hidden"></p>
 
-          <div id="questionNavGrid" class="question-grid"></div>
-        </aside>
+        <div class="actions between">
+          <button id="viewAnswerBtn" class="btn ghost" type="button">View answer</button>
+          <button id="submitBtn" class="btn primary" type="button">Finish exam</button>
+        </div>
 
-        <section class="card question-panel">
-          <div class="question-toolbar">
-            <button id="openNavigatorBtn" class="btn mobile-only" type="button">Navigator</button>
-            <button id="expandNavigatorBtn" class="btn desktop-only" type="button" hidden>Show navigator</button>
-            <span id="remainingCounter" class="meta-pill">Remaining: 0</span>
-          </div>
-
-          <div class="question-meta">
-            <span id="questionCounter">Question 0 of 0</span>
-            <span id="questionNumberBadge">#0</span>
-          </div>
-          <h2 id="questionText"></h2>
-          <form id="optionsForm" class="options"></form>
-
-          <nav class="actions between">
-            <button id="prevBtn" class="btn" type="button">Previous</button>
-            <div class="inline-actions">
-              <button id="finishBtn" class="btn ghost" type="button">Finish</button>
-              <button id="nextBtn" class="btn primary" type="button">Next</button>
-            </div>
-          </nav>
-        </section>
+        <nav class="pager" aria-label="Question navigation">
+          <button id="firstBtn" class="btn" type="button">First</button>
+          <button id="prevBtn" class="btn" type="button">Previous</button>
+          <div id="pageNumbers" class="page-numbers"></div>
+          <button id="nextNavBtn" class="btn" type="button">Next</button>
+          <button id="lastBtn" class="btn" type="button">Last</button>
+        </nav>
       </section>
 
       <section class="card hidden" id="resultView">

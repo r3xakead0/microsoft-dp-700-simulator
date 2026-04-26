@@ -1,0 +1,33 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/302443-exam-dp-700-topic-1-question-50-discussion/",
+  "published_iso": "2025-04-08T14:15:00",
+  "number": 50,
+  "topic": 1,
+  "question": "You have a Fabric workspace that contains a lakehouse named Lakehouse1.\nYou plan to create a data pipeline named Pipeline1 to ingest data into Lakehouse1. You will use a parameter named param1 to pass an external value into Pipeline1. The param1 parameter has a data type of int.\nYou need to ensure that the pipeline expression returns param1 as an int value.\nHow should you specify the parameter value?\n\n",
+  "options": [
+    {
+      "key": "A",
+      "text": "\"@pipeline().parameters.param1\""
+    },
+    {
+      "key": "B",
+      "text": "\"@{pipeline().parameters.param1}\""
+    },
+    {
+      "key": "C",
+      "text": "\"@{pipeline().parameters.[param1]}\""
+    },
+    {
+      "key": "D",
+      "text": "\"@@{pipeline().parameters.param1}\""
+    }
+  ],
+  "answers": {
+    "platform": [
+      "A"
+    ],
+    "community": [
+      "A"
+    ]
+  }
+}

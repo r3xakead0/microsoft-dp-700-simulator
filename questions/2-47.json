@@ -1,0 +1,33 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/382781-exam-dp-700-topic-2-question-47-discussion/",
+  "published_iso": "2026-01-30T06:36:00",
+  "number": 47,
+  "topic": 2,
+  "question": "You have a Microsoft Power Apps app named App1 that has data stored in Microsoft Dataverse.\nYou need to access the App1 data by using Fabric.\nWhat should you use?\n\n",
+  "options": [
+    {
+      "key": "A",
+      "text": "data pipeline"
+    },
+    {
+      "key": "B",
+      "text": "mirroring"
+    },
+    {
+      "key": "C",
+      "text": "Dataflow Gen2"
+    },
+    {
+      "key": "D",
+      "text": "a shortcut"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "D"
+    ],
+    "community": [
+      "D"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "url": "https://www.examtopics.com/discussions/microsoft/view/154783-exam-dp-700-topic-2-question-12-discussion/",
+  "published_iso": "2025-01-17T12:23:00",
+  "number": 12,
+  "topic": 2,
+  "question": "HOTSPOT -\nYou have a Fabric workspace that contains two lakehouses named Lakehouse1 and Lakehouse2. Lakehouse1 contains staging data in a Delta table named Orderlines. Lakehouse2 contains a Type 2 slowly changing dimension (SCD) dimension table named Dim_Customer.\nYou need to build a query that will combine data from Orderlines and Dim_Customer to create a new fact table named Fact_Orders. The new table must meet the following requirements:\nEnable the analysis of customer orders based on historical attributes.\nEnable the analysis of customer orders based on the current attributes.\nHow should you complete the statement? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.\n[Imagen]: https://img.examtopics.com/dp-700/image42.png\n\n",
+  "options": [
+    {
+      "key": "A",
+      "text": "[Imagen]: https://img.examtopics.com/dp-700/image42.png"
+    }
+  ],
+  "answers": {
+    "platform": [
+      "[Imagen]: https://img.examtopics.com/dp-700/image43.png"
+    ]
+  }
+}
