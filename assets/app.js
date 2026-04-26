@@ -16,15 +16,16 @@ const state = {
   answersByIndex: {},
   remainingSeconds: Number.isFinite(totalMinutes) ? totalMinutes * 60 : 5400,
   timerId: null,
+  navigatorCollapsed: false,
   status: "idle",
 };
 
 const ui = {
   examTitle: document.getElementById("examTitle"),
   examSelect: document.getElementById("examSelect"),
+  examView: document.getElementById("examView"),
   timerBadge: document.getElementById("timerBadge"),
   startView: document.getElementById("startView"),
-  examView: document.getElementById("examView"),
   resultView: document.getElementById("resultView"),
   startDescription: document.getElementById("startDescription"),
   startBtn: document.getElementById("startBtn"),
@@ -33,7 +34,15 @@ const ui = {
   questionCounter: document.getElementById("questionCounter"),
   questionNumberBadge: document.getElementById("questionNumberBadge"),
   questionText: document.getElementById("questionText"),
+  remainingCounter: document.getElementById("remainingCounter"),
   optionsForm: document.getElementById("optionsForm"),
+  navigatorPanel: document.getElementById("navigatorPanel"),
+  questionNavGrid: document.getElementById("questionNavGrid"),
+  progressSummary: document.getElementById("progressSummary"),
+  toggleNavigatorBtn: document.getElementById("toggleNavigatorBtn"),
+  expandNavigatorBtn: document.getElementById("expandNavigatorBtn"),
+  openNavigatorBtn: document.getElementById("openNavigatorBtn"),
+  closeNavigatorBtn: document.getElementById("closeNavigatorBtn"),
   prevBtn: document.getElementById("prevBtn"),
   nextBtn: document.getElementById("nextBtn"),
   finishBtn: document.getElementById("finishBtn"),
@@ -83,6 +92,75 @@ function normalizeAnswerSet(answerArray) {
   return [...new Set(answerArray)].sort();
 }
 
+function isQuestionAnswered(index) {
+  const picks = state.answersByIndex[index];
+  return Array.isArray(picks) && picks.length > 0;
+}
+
+function getAnsweredCount() {
+  return state.questions.reduce((count, _, index) => count + (isQuestionAnswered(index) ? 1 : 0), 0);
+}
+
+function updateProgressCounters() {
+  const answered = getAnsweredCount();
+  const total = state.questions.length;
+  const remaining = Math.max(0, total - answered);
+  ui.progressSummary.textContent = `Answered ${answered} / ${total}`;
+  ui.remainingCounter.textContent = `Remaining: ${remaining}`;
+}
+
+function setNavigatorOpen(isOpen) {
+  ui.navigatorPanel.classList.toggle("open", Boolean(isOpen));
+}
+
+function syncNavigatorState() {
+  ui.examView.classList.toggle("navigator-collapsed", state.navigatorCollapsed);
+  ui.expandNavigatorBtn.hidden = !state.navigatorCollapsed;
+}
+
+function renderNavigator() {
+  ui.questionNavGrid.innerHTML = "";
+  const total = state.questions.length;
+
+  for (let index = 0; index < total; index += 1) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "question-nav-btn";
+    if (isQuestionAnswered(index)) {
+      button.classList.add("answered");
+    }
+    if (index === state.currentIndex) {
+      button.classList.add("current");
+    }
+    button.textContent = String(index + 1);
+
+    const question = state.questions[index];
+    const topicLabel = Number.isFinite(Number(question?.topic)) ? `T${question.topic} ` : "";
+    button.title = `${topicLabel}Q${question?.number || index + 1}`;
+
+    button.addEventListener("click", () => {
+      goToQuestion(index);
+      if (window.matchMedia("(max-width: 720px)").matches) {
+        setNavigatorOpen(false);
+      }
+    });
+
+    ui.questionNavGrid.appendChild(button);
+  }
+
+  updateProgressCounters();
+}
+
+function goToQuestion(index) {
+  if (state.questions.length === 0) {
+    return;
+  }
+  const clamped = Math.min(Math.max(index, 0), state.questions.length - 1);
+  state.currentIndex = clamped;
+  renderQuestion();
+  persistProgress();
+}
+
 function renderQuestion() {
   const question = state.questions[state.currentIndex];
   if (!question) {
@@ -119,6 +197,7 @@ function renderQuestion() {
         }
         state.answersByIndex[state.currentIndex] = normalizeAnswerSet([...picks]);
       }
+      renderNavigator();
       persistProgress();
     });
 
@@ -135,6 +214,7 @@ function renderQuestion() {
 
   ui.prevBtn.disabled = state.currentIndex === 0;
   ui.nextBtn.textContent = state.currentIndex === state.questions.length - 1 ? "Submit" : "Next";
+  renderNavigator();
 }
 
 function persistProgress() {
@@ -143,6 +223,7 @@ function persistProgress() {
     currentIndex: state.currentIndex,
     answersByIndex: state.answersByIndex,
     remainingSeconds: state.remainingSeconds,
+    navigatorCollapsed: state.navigatorCollapsed,
     status: state.status,
   };
   localStorage.setItem(getStorageKey(), JSON.stringify(payload));
@@ -202,6 +283,7 @@ function startExam(useSaved) {
       state.currentIndex = Math.min(saved.currentIndex || 0, state.questions.length - 1);
       state.answersByIndex = saved.answersByIndex || {};
       state.remainingSeconds = saved.remainingSeconds || state.remainingSeconds;
+      state.navigatorCollapsed = Boolean(saved.navigatorCollapsed);
     }
   } else {
     state.currentIndex = 0;
@@ -212,6 +294,7 @@ function startExam(useSaved) {
 
   state.status = "in_progress";
   setView("exam");
+  syncNavigatorState();
   renderQuestion();
   startTimer();
   persistProgress();
@@ -328,6 +411,11 @@ function resetSessionState() {
   state.remainingSeconds = Number.isFinite(totalMinutes) ? totalMinutes * 60 : 5400;
   state.status = "idle";
   ui.timerBadge.textContent = formatTime(state.remainingSeconds);
+  ui.questionNavGrid.innerHTML = "";
+  ui.progressSummary.textContent = "Answered 0 / 0";
+  ui.remainingCounter.textContent = "Remaining: 0";
+  setNavigatorOpen(false);
+  syncNavigatorState();
 }
 
 function applyExamToUrl(examCode) {
@@ -377,17 +465,24 @@ function wireEvents() {
     await loadExam(event.target.value);
   });
 
+  ui.openNavigatorBtn.addEventListener("click", () => setNavigatorOpen(true));
+  ui.closeNavigatorBtn.addEventListener("click", () => setNavigatorOpen(false));
+  ui.toggleNavigatorBtn.addEventListener("click", () => {
+    state.navigatorCollapsed = true;
+    syncNavigatorState();
+  });
+  ui.expandNavigatorBtn.addEventListener("click", () => {
+    state.navigatorCollapsed = false;
+    syncNavigatorState();
+  });
+
   ui.prevBtn.addEventListener("click", () => {
-    state.currentIndex = Math.max(0, state.currentIndex - 1);
-    renderQuestion();
-    persistProgress();
+    goToQuestion(state.currentIndex - 1);
   });
 
   ui.nextBtn.addEventListener("click", () => {
     if (state.currentIndex < state.questions.length - 1) {
-      state.currentIndex += 1;
-      renderQuestion();
-      persistProgress();
+      goToQuestion(state.currentIndex + 1);
       return;
     }
     finalizeExam();
@@ -405,6 +500,42 @@ function wireEvents() {
     ui.startBtn.disabled = false;
     ui.startDescription.textContent = `Exam ${state.examCode} is ready. ${state.questions.length} questions detected.`;
     ui.timerBadge.textContent = formatTime(Number.isFinite(totalMinutes) ? totalMinutes * 60 : 5400);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (state.status !== "in_progress") {
+      return;
+    }
+    const active = document.activeElement;
+    const tagName = active?.tagName;
+    if (tagName === "INPUT" || tagName === "TEXTAREA" || tagName === "SELECT") {
+      return;
+    }
+
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      goToQuestion(state.currentIndex - 1);
+      return;
+    }
+
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      if (state.currentIndex < state.questions.length - 1) {
+        goToQuestion(state.currentIndex + 1);
+      }
+      return;
+    }
+
+    if (event.key === "Home") {
+      event.preventDefault();
+      goToQuestion(0);
+      return;
+    }
+
+    if (event.key === "End") {
+      event.preventDefault();
+      goToQuestion(state.questions.length - 1);
+    }
   });
 }
 

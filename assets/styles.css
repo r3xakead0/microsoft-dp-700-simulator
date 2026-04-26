@@ -69,6 +69,113 @@ h1 {
   box-shadow: 0 8px 30px rgba(13, 46, 79, 0.08);
 }
 
+.exam-layout {
+  display: grid;
+  gap: 16px;
+  align-items: start;
+  grid-template-columns: minmax(250px, 290px) minmax(0, 1fr);
+}
+
+.exam-layout.navigator-collapsed {
+  grid-template-columns: 1fr;
+}
+
+.exam-layout.navigator-collapsed .navigator-panel {
+  display: none;
+}
+
+.question-panel {
+  min-width: 0;
+}
+
+.navigator-panel {
+  position: sticky;
+  top: 16px;
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+}
+
+.navigator-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.navigator-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.navigator-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.progress-summary {
+  margin: 10px 0 12px;
+  color: var(--muted);
+}
+
+.question-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.question-nav-btn {
+  border: 1px solid var(--border);
+  background: #f8fbff;
+  color: var(--ink);
+  padding: 8px 4px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.question-nav-btn.answered {
+  border-color: #8ec5ea;
+  background: #eaf5ff;
+}
+
+.question-nav-btn.current {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.question-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.meta-pill {
+  display: inline-block;
+  background: #eff4fa;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: inline-flex;
+}
+
+.desktop-only[hidden],
+.mobile-only[hidden] {
+  display: none !important;
+}
+
 .hidden {
   display: none;
 }
@@ -236,6 +343,39 @@ h1 {
 }
 
 @media (max-width: 720px) {
+  .exam-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .mobile-only {
+    display: inline-flex;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .navigator-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: min(88vw, 340px);
+    max-height: none;
+    border-radius: 0 14px 14px 0;
+    transform: translateX(-105%);
+    transition: transform 180ms ease;
+    z-index: 30;
+  }
+
+  .navigator-panel.open {
+    transform: translateX(0);
+  }
+
+  .question-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .card {
     padding: 18px;
   }
