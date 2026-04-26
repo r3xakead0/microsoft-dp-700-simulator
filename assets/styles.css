@@ -127,9 +127,15 @@ h1 {
 
 #questionText {
   margin-top: 0;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   line-height: 1.6;
   white-space: pre-line;
+}
+
+.question-media {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 18px;
 }
 
 .options {
@@ -161,6 +167,29 @@ h1 {
   margin-right: 8px;
 }
 
+.option-content {
+  display: grid;
+  gap: 8px;
+}
+
+.media-group {
+  display: grid;
+  gap: 8px;
+}
+
+.exam-image {
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.media-fallback {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
 .answer-reveal {
   margin: 0 0 16px;
   padding: 10px 12px;
@@ -169,6 +198,21 @@ h1 {
   background: var(--reveal-bg);
   color: var(--accent-strong);
   font-weight: 600;
+}
+
+.answer-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.answer-item {
+  display: grid;
+  gap: 8px;
+}
+
+.result-answer-row {
+  margin-top: 8px;
 }
 
 .actions {

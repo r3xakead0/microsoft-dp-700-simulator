@@ -21,6 +21,7 @@ const ui = {
   questionCounter: document.getElementById("questionCounter"),
   progressSummary: document.getElementById("progressSummary"),
   questionText: document.getElementById("questionText"),
+  questionMedia: document.getElementById("questionMedia"),
   optionsForm: document.getElementById("optionsForm"),
   answerReveal: document.getElementById("answerReveal"),
   viewAnswerBtn: document.getElementById("viewAnswerBtn"),
@@ -55,8 +56,179 @@ function getCorrectAnswers(question) {
   return [];
 }
 
+function parseTextWithImages(rawValue) {
+  const value = String(rawValue || "");
+  const imageUrls = [];
+  const text = value
+    .replace(/\[(?:Imagen|Image)\]:\s*(https?:\/\/\S+)/gi, (_, url) => {
+      imageUrls.push(url.trim());
+      return "";
+    })
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+
+  return {
+    text,
+    imageUrls: [...new Set(imageUrls)],
+  };
+}
+
+function normalizeLooseText(rawValue) {
+  return String(rawValue || "")
+    .trim()
+    .replace(/\s+/g, " ")
+    .toLowerCase();
+}
+
+function mapAnswerTokenToOptionKey(question, answerToken) {
+  if (!question || !Array.isArray(question.options) || question.options.length === 0) {
+    return null;
+  }
+
+  const token = String(answerToken || "").trim();
+  const direct = question.options.find((option) => option.key === token);
+  if (direct) {
+    return direct.key;
+  }
+
+  const parsedToken = parseTextWithImages(token);
+  if (parsedToken.imageUrls.length > 0) {
+    const byImage = question.options.filter((option) => {
+      const parsedOption = parseTextWithImages(option.text);
+      return parsedOption.imageUrls.some((url) => parsedToken.imageUrls.includes(url));
+    });
+    if (byImage.length === 1) {
+      return byImage[0].key;
+    }
+  }
+
+  const tokenText = normalizeLooseText(parsedToken.text || token);
+  if (tokenText) {
+    const byText = question.options.filter((option) => {
+      const parsedOption = parseTextWithImages(option.text);
+      return normalizeLooseText(parsedOption.text || option.text) === tokenText;
+    });
+    if (byText.length === 1) {
+      return byText[0].key;
+    }
+  }
+
+  if (question.options.length === 1) {
+    return question.options[0].key;
+  }
+
+  return null;
+}
+
+function getExpectedAnswerKeys(question) {
+  const mapped = getCorrectAnswers(question)
+    .map((token) => mapAnswerTokenToOptionKey(question, token))
+    .filter(Boolean);
+  return normalizeAnswerSet(mapped);
+}
+
+function createImageElement(url, altText) {
+  const image = document.createElement("img");
+  image.className = "exam-image";
+  image.src = url;
+  image.alt = altText;
+  image.loading = "lazy";
+  image.addEventListener("error", () => {
+    image.classList.add("hidden");
+    const fallback = document.createElement("span");
+    fallback.className = "media-fallback";
+    fallback.textContent = "Image unavailable";
+    image.insertAdjacentElement("afterend", fallback);
+  });
+  return image;
+}
+
+function appendImageSet(container, imageUrls, labelPrefix) {
+  if (!Array.isArray(imageUrls) || imageUrls.length === 0) {
+    return;
+  }
+
+  const media = document.createElement("div");
+  media.className = "media-group";
+  imageUrls.forEach((url, index) => {
+    media.appendChild(createImageElement(url, `${labelPrefix} image ${index + 1}`));
+  });
+  container.appendChild(media);
+}
+
+function createOptionSummary(question, key) {
+  const item = document.createElement("div");
+  item.className = "answer-item";
+
+  const option = question.options.find((candidate) => candidate.key === key);
+  const keyTag = document.createElement("b");
+  keyTag.textContent = `${key}.`;
+  item.appendChild(keyTag);
+
+  if (!option) {
+    return item;
+  }
+
+  const parsedOption = parseTextWithImages(option.text);
+  if (parsedOption.text) {
+    item.appendChild(document.createTextNode(` ${parsedOption.text}`));
+  }
+  appendImageSet(item, parsedOption.imageUrls, `Option ${key}`);
+  return item;
+}
+
+function createRawAnswerSummary(answerToken) {
+  const item = document.createElement("div");
+  item.className = "answer-item";
+  const parsed = parseTextWithImages(answerToken);
+
+  if (parsed.text) {
+    item.textContent = parsed.text;
+  }
+  appendImageSet(item, parsed.imageUrls, "Answer");
+
+  if (!parsed.text && parsed.imageUrls.length === 0) {
+    item.textContent = String(answerToken || "").trim();
+  }
+
+  return item;
+}
+
+function renderAnswerLine(container, label, question, answerKeys, emptyLabel = "No answer", rawAnswers = []) {
+  const row = document.createElement("div");
+  row.className = "result-answer-row";
+
+  const title = document.createElement("strong");
+  title.textContent = `${label}:`;
+  row.appendChild(title);
+
+  const hasKeys = Array.isArray(answerKeys) && answerKeys.length > 0;
+  const hasRawAnswers = Array.isArray(rawAnswers) && rawAnswers.length > 0;
+
+  if (!hasKeys && !hasRawAnswers) {
+    row.appendChild(document.createTextNode(` ${emptyLabel}`));
+    container.appendChild(row);
+    return;
+  }
+
+  const answers = document.createElement("div");
+  answers.className = "answer-list";
+  if (hasKeys) {
+    answerKeys.forEach((key) => {
+      answers.appendChild(createOptionSummary(question, key));
+    });
+  } else {
+    rawAnswers.forEach((token) => {
+      answers.appendChild(createRawAnswerSummary(token));
+    });
+  }
+  row.appendChild(answers);
+  container.appendChild(row);
+}
+
 function shouldUseMultiSelect(question) {
-  const correctCount = getCorrectAnswers(question).length;
+  const correctCount = getExpectedAnswerKeys(question).length;
   if (correctCount > 1) {
     return true;
   }
@@ -146,20 +318,23 @@ function renderQuestion() {
   }
 
   ui.questionCounter.textContent = `Question ${state.currentIndex + 1} of ${state.questions.length}`;
-  ui.questionText.textContent = question.question;
+  const parsedQuestion = parseTextWithImages(question.question);
+  ui.questionText.textContent = parsedQuestion.text;
+  ui.questionMedia.innerHTML = "";
+  appendImageSet(ui.questionMedia, parsedQuestion.imageUrls, "Question");
 
   updateProgressSummary();
 
   const revealed = isAnswerRevealed(state.currentIndex);
-  const expected = normalizeAnswerSet(getCorrectAnswers(question));
+  const expected = getExpectedAnswerKeys(question);
   ui.viewAnswerBtn.textContent = revealed ? "Hide answer" : "View answer";
 
   if (revealed) {
-    const correctLabel = expected.length ? expected.join(", ") : "N/A";
-    ui.answerReveal.textContent = `Correct answer: ${correctLabel}`;
+    ui.answerReveal.innerHTML = "";
+    renderAnswerLine(ui.answerReveal, "Correct answer", question, expected, "N/A", getCorrectAnswers(question));
     ui.answerReveal.classList.remove("hidden");
   } else {
-    ui.answerReveal.textContent = "";
+    ui.answerReveal.innerHTML = "";
     ui.answerReveal.classList.add("hidden");
   }
 
@@ -198,11 +373,16 @@ function renderQuestion() {
       persistProgress();
     });
 
+    const parsedOption = parseTextWithImages(option.text);
     const text = document.createElement("span");
+    text.className = "option-content";
     const keyTag = document.createElement("b");
     keyTag.textContent = `${option.key}.`;
     text.appendChild(keyTag);
-    text.appendChild(document.createTextNode(` ${option.text}`));
+    if (parsedOption.text) {
+      text.appendChild(document.createTextNode(` ${parsedOption.text}`));
+    }
+    appendImageSet(text, parsedOption.imageUrls, `Option ${option.key}`);
 
     wrapper.appendChild(input);
     wrapper.appendChild(text);
@@ -270,7 +450,7 @@ function scoreExam() {
   let correctCount = 0;
 
   state.questions.forEach((question, index) => {
-    const expected = normalizeAnswerSet(getCorrectAnswers(question));
+    const expected = getExpectedAnswerKeys(question);
     const actual = normalizeAnswerSet(state.answersByIndex[index] || []);
     const isCorrect = expected.length === actual.length && expected.every((x, idx) => x === actual[idx]);
 
@@ -307,14 +487,21 @@ function finalizeExam() {
     row.className = `result-item ${entry.isCorrect ? "ok" : "bad"}`;
 
     const stateLabel = entry.isCorrect ? "Correct" : "Incorrect";
-    const userAnswer = entry.actual.length ? entry.actual.join(", ") : "No answer";
-    const expectedAnswer = entry.expected.length ? entry.expected.join(", ") : "N/A";
 
-    row.innerHTML = `
-      <div class="result-state">${stateLabel} - Question ${idx + 1} (#${entry.question.number})</div>
-      <div><strong>Your answer:</strong> ${userAnswer}</div>
-      <div><strong>Expected answer:</strong> ${expectedAnswer}</div>
-    `;
+    const stateBlock = document.createElement("div");
+    stateBlock.className = "result-state";
+    stateBlock.textContent = `${stateLabel} - Question ${idx + 1} (#${entry.question.number})`;
+    row.appendChild(stateBlock);
+
+    renderAnswerLine(row, "Your answer", entry.question, entry.actual);
+    renderAnswerLine(
+      row,
+      "Expected answer",
+      entry.question,
+      entry.expected,
+      "N/A",
+      getCorrectAnswers(entry.question)
+    );
 
     ui.resultList.appendChild(row);
   });
