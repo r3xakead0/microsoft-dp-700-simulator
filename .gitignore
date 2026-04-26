@@ -1,0 +1,9 @@
+# Sensitive environment files
+.env
+.env.*
+
+# Cloudflare local state/cache
+.wrangler/
+
+# OS/editor noise
+.DS_Store
