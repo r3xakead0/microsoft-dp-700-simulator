@@ -3,16 +3,16 @@
   "published_iso": "2025-01-25T09:27:00",
   "number": 11,
   "topic": 2,
-  "question": "HOTSPOT -\nYou are building a data loading pattern for Fabric notebook workloads.\nYou have the following code segment:\n[Imagen]: https://img.examtopics.com/dp-700/image39.png\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\nNOTE: Each correct selection is worth one point.\n[Imagen]: https://img.examtopics.com/dp-700/image40.png\n\n",
+  "question": "HOTSPOT -\nYou are building a data loading pattern for Fabric notebook workloads.\nYou have the following code segment:\n[Image]: https://img.examtopics.com/dp-700/image39.png\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.\nNOTE: Each correct selection is worth one point.\n[Image]: https://img.examtopics.com/dp-700/image40.png\n\n",
   "options": [
     {
       "key": "A",
-      "text": "[Imagen]: https://img.examtopics.com/dp-700/image40.png"
+      "text": "[Image]: https://img.examtopics.com/dp-700/image40.png"
     }
   ],
   "answers": {
     "platform": [
-      "[Imagen]: https://img.examtopics.com/dp-700/image41.png"
+      "[Image]: https://img.examtopics.com/dp-700/image41.png"
     ]
   }
 }

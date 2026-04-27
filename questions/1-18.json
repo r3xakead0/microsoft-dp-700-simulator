@@ -3,7 +3,7 @@
   "published_iso": "2024-12-12T22:20:00",
   "number": 18,
   "topic": 1,
-  "question": "You have an Azure Data Lake Storage Gen2 account named storage1 and an Amazon S3 bucket named storage2.\nYou have the Delta Parquet files shown in the following table.\n[Imagen]: https://img.examtopics.com/dp-700/image9.png\nYou have a Fabric workspace named Workspace1 that has the cache for shortcuts enabled. Workspace1 contains a lakehouse named Lakehouse1. Lakehouse1 has the following shortcuts:\nA shortcut to ProductFile aliased as Products\nA shortcut to StoreFile aliased as Stores\nA shortcut to TripsFile aliased as Trips\nThe data from which shortcuts will be retrieved from the cache?\n\n",
+  "question": "You have an Azure Data Lake Storage Gen2 account named storage1 and an Amazon S3 bucket named storage2.\nYou have the Delta Parquet files shown in the following table.\n[Image]: https://img.examtopics.com/dp-700/image9.png\nYou have a Fabric workspace named Workspace1 that has the cache for shortcuts enabled. Workspace1 contains a lakehouse named Lakehouse1. Lakehouse1 has the following shortcuts:\nA shortcut to ProductFile aliased as Products\nA shortcut to StoreFile aliased as Stores\nA shortcut to TripsFile aliased as Trips\nThe data from which shortcuts will be retrieved from the cache?\n\n",
   "options": [
     {
       "key": "A",

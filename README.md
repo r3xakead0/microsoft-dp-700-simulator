@@ -1,18 +1,18 @@
 # Microsoft DP-700 Simulator
 
-Simulador web ligero para practicar preguntas del examen **Microsoft DP-700**.
+Lightweight web simulator to practice **Microsoft DP-700** exam questions.
 
-No requiere backend ni proceso de build: todo corre en el navegador con archivos estaticos (`HTML + CSS + JavaScript + JSON`).
+No backend or build process is required: everything runs in the browser with static files (`HTML + CSS + JavaScript + JSON`).
 
-## Caracteristicas
+## Features
 
-- Flujo de examen con pantalla de inicio, navegacion por preguntas y resultados finales.
-- Soporte para preguntas de seleccion unica y multiple.
-- Boton para revelar/ocultar respuesta correcta por pregunta.
-- Persistencia local del progreso con `localStorage`.
-- Compatible con despliegue en Cloudflare Pages.
+- Exam flow with a start screen, question navigation, and final results.
+- Support for both single-select and multi-select questions.
+- Button to reveal/hide the correct answer for each question.
+- Local progress persistence with `localStorage`.
+- Compatible with Cloudflare Pages deployment.
 
-## Estructura del proyecto
+## Project structure
 
 ```text
 .
@@ -26,11 +26,11 @@ No requiere backend ni proceso de build: todo corre en el navegador con archivos
 └── wrangler.toml
 ```
 
-## Formato de preguntas
+## Question format
 
-Cada pregunta se guarda como JSON en `questions/<topic>-<number>.json`.
+Each question is stored as JSON in `questions/<topic>-<number>.json`.
 
-Ejemplo:
+Example:
 
 ```json
 {
@@ -50,63 +50,63 @@ Ejemplo:
 }
 ```
 
-Reglas importantes:
+Important rules:
 
-- `options[].key` debe ser unico por pregunta.
-- Las respuestas deben referenciar claves existentes de `options[].key`.
-- Si `answers.platform` no esta disponible, la app usa `answers.community` como respaldo.
+- `options[].key` must be unique per question.
+- Answers must reference existing keys from `options[].key`.
+- If `answers.platform` is unavailable, the app falls back to `answers.community`.
 
-## Ejecutar en local
+## Run locally
 
-Como es un sitio estatico, puedes servirlo con cualquier servidor HTTP.
+Because this is a static site, you can serve it with any HTTP server.
 
-### Opcion 1: Python
+### Option 1: Python
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Luego abre: `http://localhost:8080`
+Then open: `http://localhost:8080`
 
-### Opcion 2: Node
+### Option 2: Node
 
 ```bash
 npx serve .
 ```
 
-## Despliegue en Cloudflare Pages (Wrangler)
+## Deploy to Cloudflare Pages (Wrangler)
 
-Prerequisitos:
+Prerequisites:
 
 - Node.js 18+
-- `wrangler` (via `npx` o instalado global)
-- API Token de Cloudflare con permisos para Pages/Workers
+- `wrangler` (via `npx` or globally installed)
+- Cloudflare API token with Pages/Workers permissions
 
-1. Exporta tu token:
-
-```bash
-export CLOUDFLARE_API_TOKEN="<TU_TOKEN>"
-```
-
-2. (Opcional) Define el Account ID:
+1. Export your token:
 
 ```bash
-export CLOUDFLARE_ACCOUNT_ID="<TU_ACCOUNT_ID>"
+export CLOUDFLARE_API_TOKEN="<YOUR_TOKEN>"
 ```
 
-3. Crea el proyecto (solo la primera vez):
+2. (Optional) Define the Account ID:
+
+```bash
+export CLOUDFLARE_ACCOUNT_ID="<YOUR_ACCOUNT_ID>"
+```
+
+3. Create the project (first time only):
 
 ```bash
 npx wrangler pages project create microsoft-dp-700-simulator --production-branch main
 ```
 
-4. Despliega:
+4. Deploy:
 
 ```bash
 npx wrangler pages deploy . --project-name microsoft-dp-700-simulator --commit-dirty=true
 ```
 
-## Notas
+## Notes
 
-- Este repo puede contener preguntas con contenido de imagen/hotspot que requieren curacion adicional del dataset.
-- Nunca subas tokens o secretos al repositorio (`.env`, claves API, etc.).
+- This repo may contain image/hotspot questions that require additional dataset curation.
+- Never commit tokens or secrets to the repository (`.env`, API keys, etc.).

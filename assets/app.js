@@ -60,7 +60,7 @@ function parseTextWithImages(rawValue) {
   const value = String(rawValue || "");
   const imageUrls = [];
   const text = value
-    .replace(/\[(?:Imagen|Image)\]:\s*(https?:\/\/\S+)/gi, (_, url) => {
+    .replace(/\[Image\]:\s*(https?:\/\/\S+)/gi, (_, url) => {
       imageUrls.push(url.trim());
       return "";
     })

@@ -3,7 +3,7 @@
   "published_iso": "2026-01-30T06:37:00",
   "number": 48,
   "topic": 2,
-  "question": "You have a Fabric workspace named Workspace1 that contains three notebooks named notebook_01, notebook_02, and notebook_03.\nYou are building a new notebook in Workspace1 that will contain the following Directed Acyclic Graph (DAG) definition.\n[Imagen]: https://img.examtopics.com/dp-700/image122.png\nYou need to modify the DAG definition to meet the following requirements:\n•\tEnsure that notebook_01 and notebook_02 run in parallel.\n•\tEnsure that notebook_02 only runs after the execution of notebook_03 is complete.\nHow should you modify the DAG definition?\n\n",
+  "question": "You have a Fabric workspace named Workspace1 that contains three notebooks named notebook_01, notebook_02, and notebook_03.\nYou are building a new notebook in Workspace1 that will contain the following Directed Acyclic Graph (DAG) definition.\n[Image]: https://img.examtopics.com/dp-700/image122.png\nYou need to modify the DAG definition to meet the following requirements:\n•\tEnsure that notebook_01 and notebook_02 run in parallel.\n•\tEnsure that notebook_02 only runs after the execution of notebook_03 is complete.\nHow should you modify the DAG definition?\n\n",
   "options": [
     {
       "key": "A",

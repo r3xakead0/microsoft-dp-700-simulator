@@ -3,16 +3,16 @@
   "published_iso": "2025-04-09T06:48:00",
   "number": 55,
   "topic": 1,
-  "question": "HOTSPOT\n-\nYou have a Fabric workspace that contains a warehouse named Warehouse1. Warehouse1 contains a table named Customer. Customer contains the following data.\n[Imagen]: https://img.examtopics.com/dp-700/image78.png\nYou have an internal Microsoft Entra user named User1 that has an email address of.\nYou need to provide User1 with access to the Customer table. The solution must prevent User1 from accessing the CreditCard column.\nHow should you complete the statement? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.\n[Imagen]: https://img.examtopics.com/dp-700/image79.png\n\n",
+  "question": "HOTSPOT\n-\nYou have a Fabric workspace that contains a warehouse named Warehouse1. Warehouse1 contains a table named Customer. Customer contains the following data.\n[Image]: https://img.examtopics.com/dp-700/image78.png\nYou have an internal Microsoft Entra user named User1 that has an email address of.\nYou need to provide User1 with access to the Customer table. The solution must prevent User1 from accessing the CreditCard column.\nHow should you complete the statement? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.\n[Image]: https://img.examtopics.com/dp-700/image79.png\n\n",
   "options": [
     {
       "key": "A",
-      "text": "[Imagen]: https://img.examtopics.com/dp-700/image79.png"
+      "text": "[Image]: https://img.examtopics.com/dp-700/image79.png"
     }
   ],
   "answers": {
     "platform": [
-      "[Imagen]: https://img.examtopics.com/dp-700/image80.png"
+      "[Image]: https://img.examtopics.com/dp-700/image80.png"
     ]
   }
 }

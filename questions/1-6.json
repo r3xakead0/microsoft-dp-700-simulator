@@ -3,11 +3,11 @@
   "published_iso": "2024-12-16T16:59:00",
   "number": 6,
   "topic": 1,
-  "question": "HOTSPOT -\nYou have a Fabric workspace that contains a warehouse named DW1. DW1 contains the following tables and columns.\n[Imagen]: https://img.examtopics.com/dp-700/image1.png\nYou need to create an output that presents the summarized values of all the order quantities by year and product. The results must include a summary of the order quantities at the year level for all the products.\nHow should you complete the code? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.\n[Imagen]: https://img.examtopics.com/dp-700/image2.png\n\n",
+  "question": "HOTSPOT -\nYou have a Fabric workspace that contains a warehouse named DW1. DW1 contains the following tables and columns.\n[Image]: https://img.examtopics.com/dp-700/image1.png\nYou need to create an output that presents the summarized values of all the order quantities by year and product. The results must include a summary of the order quantities at the year level for all the products.\nHow should you complete the code? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.\n[Image]: https://img.examtopics.com/dp-700/image2.png\n\n",
   "options": [
     {
       "key": "A",
-      "text": "[Imagen]: https://img.examtopics.com/dp-700/image2.png"
+      "text": "[Image]: https://img.examtopics.com/dp-700/image2.png"
     }
   ],
   "answers": {

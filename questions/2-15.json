@@ -3,23 +3,23 @@
   "published_iso": "2024-12-13T19:26:00",
   "number": 15,
   "topic": 2,
-  "question": "You have a Fabric workspace that contains an eventhouse and a KQL database named Database1. Database1 has the following:\nA table named Table1 -\nA table named Table2 -\nAn update policy named Policy1 -\nPolicy1 sends data from Table1 to Table2.\nThe following is a sample of the data in Table2.\n[Imagen]: https://img.examtopics.com/dp-700/image44.png\nRecently, the following actions were performed on Table1:\nAn additional element named temperature was added to the StreamData column.\nThe data type of the Timestamp column was changed to date.\nThe data type of the DeviceId column was changed to string.\nYou plan to load additional records to Table2.\nWhich two records will load from Table1 to Table2? Each correct answer presents a complete solution.\nNOTE: Each correct selection is worth one point.\n\n",
+  "question": "You have a Fabric workspace that contains an eventhouse and a KQL database named Database1. Database1 has the following:\nA table named Table1 -\nA table named Table2 -\nAn update policy named Policy1 -\nPolicy1 sends data from Table1 to Table2.\nThe following is a sample of the data in Table2.\n[Image]: https://img.examtopics.com/dp-700/image44.png\nRecently, the following actions were performed on Table1:\nAn additional element named temperature was added to the StreamData column.\nThe data type of the Timestamp column was changed to date.\nThe data type of the DeviceId column was changed to string.\nYou plan to load additional records to Table2.\nWhich two records will load from Table1 to Table2? Each correct answer presents a complete solution.\nNOTE: Each correct selection is worth one point.\n\n",
   "options": [
     {
       "key": "A",
-      "text": "[Imagen]: https://img.examtopics.com/dp-700/image45.png"
+      "text": "[Image]: https://img.examtopics.com/dp-700/image45.png"
     },
     {
       "key": "B",
-      "text": "[Imagen]: https://img.examtopics.com/dp-700/image46.png"
+      "text": "[Image]: https://img.examtopics.com/dp-700/image46.png"
     },
     {
       "key": "C",
-      "text": "[Imagen]: https://img.examtopics.com/dp-700/image47.png"
+      "text": "[Image]: https://img.examtopics.com/dp-700/image47.png"
     },
     {
       "key": "D",
-      "text": "[Imagen]: https://img.examtopics.com/dp-700/image48.png"
+      "text": "[Image]: https://img.examtopics.com/dp-700/image48.png"
     }
   ],
   "answers": {

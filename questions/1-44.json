@@ -3,16 +3,16 @@
   "published_iso": "2025-04-15T18:23:00",
   "number": 44,
   "topic": 1,
-  "question": "HOTSPOT\n-\nYou are building a data orchestration pattern by using a Fabric data pipeline named Dynamic Data Copy as shown in the exhibit. (Click the Exhibit tab.)\n[Imagen]: https://img.examtopics.com/dp-700/image71.png\nDynamic Data Copy does NOT use parametrization.\nYou need to configure the ForEach activity to receive the list of tables to be copied.\nHow should you complete the pipeline expression? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.\n[Imagen]: https://img.examtopics.com/dp-700/image72.png\n\n",
+  "question": "HOTSPOT\n-\nYou are building a data orchestration pattern by using a Fabric data pipeline named Dynamic Data Copy as shown in the exhibit. (Click the Exhibit tab.)\n[Image]: https://img.examtopics.com/dp-700/image71.png\nDynamic Data Copy does NOT use parametrization.\nYou need to configure the ForEach activity to receive the list of tables to be copied.\nHow should you complete the pipeline expression? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.\n[Image]: https://img.examtopics.com/dp-700/image72.png\n\n",
   "options": [
     {
       "key": "A",
-      "text": "[Imagen]: https://img.examtopics.com/dp-700/image72.png"
+      "text": "[Image]: https://img.examtopics.com/dp-700/image72.png"
     }
   ],
   "answers": {
     "platform": [
-      "[Imagen]: https://img.examtopics.com/dp-700/image73.png"
+      "[Image]: https://img.examtopics.com/dp-700/image73.png"
     ]
   }
 }

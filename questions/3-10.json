@@ -3,16 +3,16 @@
   "published_iso": "2025-01-30T09:00:00",
   "number": 10,
   "topic": 3,
-  "question": "HOTSPOT -\nYou have a Fabric workspace that contains an eventstream named EventStream1.\nYou discover that an EventStream1 transformation fails.\nYou need to find the following error information:\nThe error details, including the occurrence time\nThe total number of errors -\nWhat should you use? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.\n[Imagen]: https://img.examtopics.com/dp-700/image62.png\n\n",
+  "question": "HOTSPOT -\nYou have a Fabric workspace that contains an eventstream named EventStream1.\nYou discover that an EventStream1 transformation fails.\nYou need to find the following error information:\nThe error details, including the occurrence time\nThe total number of errors -\nWhat should you use? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.\n[Image]: https://img.examtopics.com/dp-700/image62.png\n\n",
   "options": [
     {
       "key": "A",
-      "text": "[Imagen]: https://img.examtopics.com/dp-700/image62.png"
+      "text": "[Image]: https://img.examtopics.com/dp-700/image62.png"
     }
   ],
   "answers": {
     "platform": [
-      "[Imagen]: https://img.examtopics.com/dp-700/image63.png"
+      "[Image]: https://img.examtopics.com/dp-700/image63.png"
     ]
   }
 }
