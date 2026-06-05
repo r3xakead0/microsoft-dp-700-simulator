@@ -7,7 +7,7 @@
   "options": [
     {
       "key": "A",
-      "text": "dd the DataAnalyst group to the Viewer role for WorkspaceA."
+      "text": "Add the DataAnalyst group to the Viewer role for WorkspaceA."
     },
     {
       "key": "B",

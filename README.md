@@ -97,13 +97,13 @@ export CLOUDFLARE_ACCOUNT_ID="<YOUR_ACCOUNT_ID>"
 3. Create the project (first time only):
 
 ```bash
-npx wrangler pages project create microsoft-dp-700-simulator --production-branch main
+npx wrangler pages project create ms-dp-700-simulator --production-branch main
 ```
 
 4. Deploy:
 
 ```bash
-npx wrangler pages deploy . --project-name microsoft-dp-700-simulator --commit-dirty=true
+npx wrangler pages deploy . --project-name ms-dp-700-simulator --commit-dirty=true
 ```
 
 ## Notes

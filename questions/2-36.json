@@ -7,7 +7,7 @@
   "options": [
     {
       "key": "A",
-      "text": "dd a ForEach activity to the data pipeline."
+      "text": "Add a ForEach activity to the data pipeline."
     },
     {
       "key": "B",

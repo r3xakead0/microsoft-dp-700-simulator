@@ -7,7 +7,7 @@
   "options": [
     {
       "key": "A",
-      "text": "ctions (Read and write) and Contents (Read and write)"
+      "text": "Actions (Read and write) and Contents (Read and write)"
     },
     {
       "key": "B",
@@ -15,7 +15,7 @@
     },
     {
       "key": "C",
-      "text": "ontents (Read and write) only"
+      "text": "Contents (Read and write) only"
     },
     {
       "key": "D",
