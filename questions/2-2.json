@@ -15,7 +15,7 @@
     },
     {
       "key": "C",
-      "text": "onfigure incremental refresh for the dataflow. Set Store rows from the past to 1 Month."
+      "text": "Configure incremental refresh for the dataflow. Set Store rows from the past to 1 Month."
     },
     {
       "key": "D",
